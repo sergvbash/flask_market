@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}Add item{% endblock %}
+
+{% block content %}
+<div class="container">
+        <form name="register" action="" method="post" novalidate>
+            <fieldset class="form-group">
+                <legend>New Item:</legend>
+                {{ form.hidden_tag()}}
+                <p>
+                    {{ form.title.label }}<br>
+                    {{ form.title(class='form-control') }}
+                </p>
+                <p>
+                    {{ form.description.label }}<br>
+                    {{ form.description(class='form-control') }}
+                </p>
+                <p>
+                    {{ form.price.label }}<br>
+                    {{ form.price(class='form-control') }}
+                </p>
+                <p>
+                    {{ form.instock.label }}<br>
+                    {{ form.instock(class='form-control') }}
+                </p>
+                <p>
+
+                    {{ form.submit(class='btn btn-success') }}
+                </p>
+            </fieldset>
+
+        </form>
+
+
+    </div>
+{% endblock %}

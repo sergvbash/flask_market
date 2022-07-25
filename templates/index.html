@@ -7,4 +7,21 @@
     <h1>
         Welcome to marketplace!!!!
     </h1>
+ <form method="post">
+        <lable>In stock: </lable>
+        <input type="checkbox" name="filteronstock" value='on' {% if ch=="on" %} checked {% endif %}>
+        <input type="checkbox" name="filteronstock" value='off' checked hidden>
+        <input type="submit" value="Apply">
+ </form><br>
+<div class="card-deck mb-3 text-center">
+{% for item in items%}
+    <div class="item" style="display: inline-block; margin: 0 10px; border: blanchedalmond solid 1px; max-width: 40em">
+        <h4>Title: {{item.title}}</h4>
+        <p>Description: {{item.description}}</p>
+        <h5>Price: {{item.price}}</h5>
+        <h5>In stock: {{item.instock}}</h5>
+        <a href="{{url_for('buy', id=item.id)}}">Buy</a>
+    </div>
+{% endfor %}
 {% endblock %}
+</div>
